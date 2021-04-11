@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">bookstore</string>
+    <string name="app_tagLine">Your one stop solution  to Buy and sell books</string>
+    <string name="getStarted">get started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enterName">Enter your name</string>
+    <string name="enter_phone_no">Enter your phone number</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="otp_descrip">We have sent it to </string>
+    <string name="why_location_info">We use it to help you connect with best buyer/seller</string>
+    <string name="next">next</string>
+    <string-array name="city_names">
+        <item>Mumbai</item>
+        <item>Chennai</item>
+        <item>Delhi</item>
+        <item>Goa</item>
+        <item>Calcutta</item>
+        <item>Noida</item>
+    </string-array>
+</resources>

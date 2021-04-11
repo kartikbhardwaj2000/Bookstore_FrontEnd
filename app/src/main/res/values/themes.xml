@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Bookstore" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/teal_200</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="appTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryVarient</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+
+    </style>
+    <style name="gettingStartedTheme" parent="Theme.AppCompat.Light.NoActionBar">
+       <item name="buttonStyle">@style/ButtonStyle</item>
+    </style>
+    <style name="ButtonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_selector</item>
+    </style>
+    <style name="noActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+</resources>

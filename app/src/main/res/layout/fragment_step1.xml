@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Authentication.Fragments.Step1Fragment"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margin_16pts"
+
+    >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enterName"
+        android:textSize="@dimen/text_large"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        />
+    <EditText
+        android:layout_margin="@dimen/margin_large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/text_large"
+        android:textColor="@color/black"
+        android:inputType="textPersonName"
+        android:imeOptions="actionDone"
+
+
+        />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginHorizontal="@dimen/margin_16pts"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:enabled="true"
+
+
+        />
+
+
+</LinearLayout>
