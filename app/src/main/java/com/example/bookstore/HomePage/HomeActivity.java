@@ -2,7 +2,7 @@ package com.example.bookstore.HomePage;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import com.example.bookstore.R;
 public class HomeActivity extends AppCompatActivity {
 
     @Override
