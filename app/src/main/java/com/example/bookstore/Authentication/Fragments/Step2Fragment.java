@@ -13,7 +13,7 @@ import com.example.bookstore.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Step2Fragment#newInstance} factory method to
+ * Use the {@link Step2Fragment newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Step2Fragment extends Fragment {

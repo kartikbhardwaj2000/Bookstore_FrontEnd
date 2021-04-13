@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomePage.HomeActivity">
+    tools:context=".CreateListing.Fragments.CreateListingStep1Fragment"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margin_16pts" >
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.Toolbar
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/tool_bar"
+        app:titleTextColor="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Name comes Here"
+        android:textSize="24dp"
+        android:layout_margin="@dimen/margin_16pts"
+        android:textColor="@color/black"/>
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/home">
+
+        <ImageView
+            android:layout_width="150"
+            android:layout_height="150"
+            android:background="@drawable/book"
+            android:layout_marginLeft="@dimen/margin_16pts"
+            android:padding="50"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/home2"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs. 1000"
+                android:textSize="20dp"
+                android:layout_marginLeft="@dimen/margin_16pts"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quality Here"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/margin_16pts"
+                />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="@string/notify"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:layout_margin="@dimen/margin_16pts"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

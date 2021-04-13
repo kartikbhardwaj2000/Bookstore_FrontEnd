@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateListing.CreateListingActivity">
+    tools:context=".CreateListing.CreateListingActivity"
+    android:orientation="vertical"
+    >
+    <android.support.v7.widget.Toolbar
 
-</android.support.constraint.ConstraintLayout>
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/tool_bar"
+        app:titleTextColor="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+
+
+        />
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="20"
+        android:id="@+id/progress_bar"
+
+        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/fragmentContainer"
+        android:layout_margin="@dimen/margin_16pts"
+        />
+
+
+</LinearLayout>

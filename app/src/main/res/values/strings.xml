@@ -18,4 +18,17 @@
         <item>Calcutta</item>
         <item>Noida</item>
     </string-array>
+
+<!--    Create Listing-->
+    <string name = "enterBookName"> Enter Book Name</string>
+    <string name = "authorName"> Enter Author Name </string>
+    <string name = "bookSubject"> Which subject is this book related to? </string>
+    <string name = "bookClass"> For which Class is this book recommendable</string>
+    <string name = "bookPrice"> Put price to sell</string>
+    <string name = "bookDescription"> Give a short Description of book</string>
+    <string name = "bookCondition"> Rate condition of book </string>
+
+
+<!--    Home Page-->
+    <string name="notify"> Notify </string>
 </resources>

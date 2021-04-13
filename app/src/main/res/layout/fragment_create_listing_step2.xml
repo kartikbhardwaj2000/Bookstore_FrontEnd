@@ -1,14 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateListing.Fragments.CreateListingStep2Fragment">
+    tools:context=".CreateListing.Fragments.CreateListingStep2Fragment"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/bookSubject"
+        android:textSize="@dimen/text_large"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_margin="@dimen/margin_16pts"/>
 
-</FrameLayout>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="@dimen/margin_16pts"
+        android:id = "@+id/spinnerSubject"
+        android:background="@drawable/spinner_border"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bookClass"
+        android:textSize="@dimen/text_large"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_margin="@dimen/margin_16pts"/>
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_margin="@dimen/margin_16pts"
+        android:id = "@+id/spinnerClass"
+        android:background="@drawable/spinner_border"
+        />
+
+    <Button
+        android:id="@+id/next_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_marginHorizontal="@dimen/margin_16pts"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_gravity="center_horizontal"
+
+        android:textColor="@color/white"
+        android:enabled="true"
+
+        />
+
+
+
+</LinearLayout>

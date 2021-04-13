@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bookstore">
-        <activity android:name=".HomePage.HomeActivity"></activity>
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/actions" />
+        <!-- Color and all -->
+        <activity android:name=".HomePage.HomeActivity" />
         <activity android:name=".HomePage.BookDetailActivity" />
         <activity android:name=".CreateListing.CreateListingActivity" />
         <activity
