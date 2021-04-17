@@ -10,6 +10,12 @@
     <string name="otp_descrip">We have sent it to </string>
     <string name="why_location_info">We use it to help you connect with best buyer/seller</string>
     <string name="next">next</string>
+    <string name="home">home</string>
+    <string name="favourites">favourites</string>
+    <string name="notifications">notifications</string>
+    <string name="profile">profile</string>
+    <string name="logout">logout</string>
+    <string name="addListing">add listing</string>
     <string-array name="city_names">
         <item>Mumbai</item>
         <item>Chennai</item>

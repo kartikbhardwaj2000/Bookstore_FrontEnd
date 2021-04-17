@@ -1,16 +1,22 @@
-package com.example.bookstore.CreateListing.Fragments;
+package com.example.bookstore.HomePage.Fragments;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bookstore.R;
 
-
-public class CreateListingStep1Fragment extends Fragment {
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class HomeFragment extends Fragment {
 
 
 
@@ -25,6 +31,7 @@ public class CreateListingStep1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_listing_step1, container, false);
+        Log.d("tag","favourite fragment");
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }

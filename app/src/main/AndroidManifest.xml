@@ -8,8 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Bookstore">
-        <activity android:name=".HomePage.HomeActivity"></activity>
+        android:theme="@style/appTheme">
+        <activity android:name=".HomePage.SearchActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+            android:resource="@xml/searchable"/>
+
+        </activity>
+        <activity android:name=".HomePage.HomeActivity" />
         <activity android:name=".HomePage.BookDetailActivity" />
         <activity android:name=".CreateListing.CreateListingActivity" />
         <activity

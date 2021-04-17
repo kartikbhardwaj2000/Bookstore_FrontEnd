@@ -2,20 +2,16 @@ package com.example.bookstore.Authentication.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.bookstore.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Step2Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class Step2Fragment extends Fragment {
 
  private  FragmentListener listener;

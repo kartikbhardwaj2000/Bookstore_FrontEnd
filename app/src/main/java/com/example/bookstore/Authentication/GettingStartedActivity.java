@@ -1,10 +1,9 @@
 package com.example.bookstore.Authentication;
 
-import com.example.bookstore.Authentication.Fragments.FragmentListener;
 import com.example.bookstore.R;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 

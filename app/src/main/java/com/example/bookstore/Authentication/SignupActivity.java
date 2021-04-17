@@ -5,23 +5,24 @@ import com.example.bookstore.Authentication.Fragments.Step1Fragment;
 import com.example.bookstore.Authentication.Fragments.Step2Fragment;
 import com.example.bookstore.Authentication.Fragments.Step3Fragment;
 import com.example.bookstore.Authentication.Fragments.Step4Fragment;
+import com.example.bookstore.HomePage.HomeActivity;
 import com.example.bookstore.R;
 
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.List;
 
-public class SignupActivity extends AppCompatActivity  implements FragmentListener {
+public class SignupActivity extends AppCompatActivity  implements FragmentListener,Step4Fragment.Listener {
 
     private ProgressBar progressBar;
     private Fragment currentFragment;
@@ -34,7 +35,12 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
          progressBar =findViewById(R.id.progress_bar);
 
         setSupportActionBar(supportToolBar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+   ActionBar actionBar= getSupportActionBar();
+   if(actionBar!=null)
+   {
+       actionBar.setDisplayHomeAsUpEnabled(true);
+   }
         addFirstFragment();
 
 
@@ -123,6 +129,13 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
 
     }
 
+    @Override
+    public void onNextClick() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+
+    }
+
     private void addFirstFragment()
     {
         setTitle("step-1");
@@ -132,38 +145,5 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
         transaction.add(R.id.fragmentContainer,step1Fragment);
         transaction.commit();
         currentFragment=step1Fragment;
-    }
-
-    private  void initialize()
-    {
-//     switch (currentFragment)
-//     {
-//         case currentFragment instanceof Step2Fragment:
-//
-//             break;
-//         case currentFragment instanceof Step3Fragment:
-//             setTitle("step-2");
-//             progressBar.setProgress(50);
-//             break;
-//         case currentFragment instanceof Step4Fragment:
-//             setTitle("step-3");
-//             progressBar.setProgress(75);
-//
-//     }
-
-//     if(currentFragment instanceof Step2Fragment)
-//     {
-//         setTitle("step-1");
-//         progressBar.setProgress(25);
-//         currentFragment= getSupportFragmentManager().getFragments().;
-//     }
-       int count = getSupportFragmentManager().getFragments().size();
-       List<Fragment> fragments = getSupportFragmentManager().getFragments();
-       Fragment fragment=fragments.get(fragments.size()-1);
-       Log.d("data1","size is "+String.valueOf(count));
-        Log.d("data2",fragment.toString());
-
-
-
     }
 }
