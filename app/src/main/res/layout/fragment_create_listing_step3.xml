@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateListing.Fragments.CreateListingStep3Fragment">
+    tools:context=".CreateListing.Fragments.CreateListingStep3Fragment"
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/bookCondition"
+        android:textSize="@dimen/text_large"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_margin="@dimen/margin_16pts"/>
 
-</FrameLayout>
+
+        <RadioGroup
+            android:id="@+id/rgroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_large"
+            android:layout_marginHorizontal="@dimen/margin_16pts"
+            >
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rbutton1"
+                android:text = "New"
+                android:textSize="@dimen/text_large"
+                android:layout_marginBottom="@dimen/margin_16pts"
+                android:background="@drawable/radiobtn_selector"
+                android:checked="true"/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New but marked"
+                android:textSize="@dimen/text_large"
+                android:background="@drawable/radiobtn_selector"
+                android:layout_marginBottom="@dimen/margin_16pts"
+                />
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Old"
+                android:textSize="@dimen/text_large"
+                android:background="@drawable/radiobtn_selector"
+                android:layout_marginBottom="@dimen/margin_16pts"
+/>
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Old with few pages torn"
+                android:background="@drawable/radiobtn_selector"
+                android:textSize="@dimen/text_large"/>
+
+        </RadioGroup>
+
+    <Button
+    android:id="@+id/next_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/next"
+    android:layout_marginHorizontal="@dimen/margin_16pts"
+    android:layout_marginTop="@dimen/margin_large"
+    android:layout_gravity="center_horizontal"
+
+    android:textColor="@color/white"
+
+    />
+</LinearLayout>

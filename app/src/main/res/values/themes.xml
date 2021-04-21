@@ -14,6 +14,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryVarient</item>
         <item name="colorAccent">@color/colorSecondary</item>
         <item name="colorOnSurface">@color/white</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
 
 
 
@@ -27,4 +28,5 @@
     <style name="noActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
     </style>
+
 </resources>

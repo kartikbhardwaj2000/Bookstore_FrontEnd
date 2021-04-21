@@ -49,4 +49,5 @@ public class Step4Fragment extends Fragment {
     static public interface Listener{
         public void onNextClick();
     }
+
 }

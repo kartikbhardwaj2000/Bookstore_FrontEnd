@@ -25,4 +25,5 @@ public class CreateListingStep5Fragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_create_listing_step5, container, false);
     }
+
 }

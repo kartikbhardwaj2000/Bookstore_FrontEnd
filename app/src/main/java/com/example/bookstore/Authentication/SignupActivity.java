@@ -25,7 +25,6 @@ import java.util.List;
 public class SignupActivity extends AppCompatActivity  implements FragmentListener,Step4Fragment.Listener {
 
     private ProgressBar progressBar;
-    private Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,6 +143,7 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.fragmentContainer,step1Fragment);
         transaction.commit();
-        currentFragment=step1Fragment;
+
     }
+
 }

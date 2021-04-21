@@ -1,3 +1,4 @@
+
 package com.example.bookstore.Authentication.Fragments;
 
 import android.content.Context;
@@ -48,6 +49,7 @@ public class Step1Fragment extends Fragment {
 
 
     }
+
 
 
 }

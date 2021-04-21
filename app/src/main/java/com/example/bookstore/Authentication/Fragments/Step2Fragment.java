@@ -1,3 +1,4 @@
+
 package com.example.bookstore.Authentication.Fragments;
 
 import android.content.Context;
@@ -41,4 +42,5 @@ public class Step2Fragment extends Fragment {
         getView().findViewById(R.id.next_button).setOnClickListener(v -> listener.nextButtonCLicked("step3"));
 
     }
+
 }
