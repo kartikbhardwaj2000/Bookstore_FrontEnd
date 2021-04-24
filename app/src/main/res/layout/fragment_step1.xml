@@ -19,6 +19,7 @@
         android:textColor="@color/black"
         />
     <EditText
+        android:id="@+id/name_edittext"
         android:layout_margin="@dimen/margin_large"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
         android:textColor="@color/black"
         android:inputType="textPersonName"
         android:imeOptions="actionDone"
+
 
 
         />

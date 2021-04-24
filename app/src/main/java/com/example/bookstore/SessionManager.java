@@ -1,0 +1,71 @@
+package com.example.bookstore;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+
+public class SessionManager {
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+    Context context;
+    int PRIVATE_MODE=0;
+    private static final String PREF_NAME= "Bookstore";
+    private String NAME ="name";
+    private String PHONE_NO="phone_no";
+    private String USER_ID="user_id";
+    private String PROFILE_PIC_LINK="profile_pic_link";
+    private String LOCATION ="location";
+
+    public SessionManager(Context context)
+    {
+        this.context=context;
+        sharedPreferences=this.context.getSharedPreferences(PREF_NAME,PRIVATE_MODE);
+        editor=sharedPreferences.edit();
+    }
+
+
+    public String getNAME() {
+        return this.sharedPreferences.getString(NAME,null);
+    }
+
+    public void setNAME(String name) {
+        editor.putString(NAME,name);
+        editor.commit();
+
+    }
+
+    public String getPHONE_NO() {
+        return this.sharedPreferences.getString(PHONE_NO,null);
+    }
+
+    public void setPHONE_NO(String phone_no) {
+        editor.putString(PHONE_NO,phone_no);
+        editor.commit();
+    }
+
+    public String getUSER_ID() {
+        return this.sharedPreferences.getString(USER_ID,null);
+    }
+
+    public void setUSER_ID(String user_id) {
+        editor.putString(USER_ID,user_id);
+        editor.commit();
+    }
+
+    public String getPROFILE_PIC_LINK() {
+        return this.sharedPreferences.getString(PROFILE_PIC_LINK,null);
+    }
+
+    public void setPROFILE_PIC_LINK(String profile_pic_link) {
+        editor.putString(PROFILE_PIC_LINK,profile_pic_link);
+        editor.commit();
+    }
+    public String getLOCATION()
+    {
+        return this.sharedPreferences.getString(LOCATION,null);
+    }
+    public void setLOCATION(String location)
+    {
+        editor.putString(LOCATION,location);
+        editor.commit();
+    }
+}

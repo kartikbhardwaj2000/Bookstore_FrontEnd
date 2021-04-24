@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.bookstore.R;
 
@@ -17,6 +18,9 @@ import com.example.bookstore.R;
 public class Step1Fragment extends Fragment {
 
    private FragmentListener listener;
+   private EditText nameEditText;
+   private DataListener dataListener;
+   private  String userName;
 
 
 
@@ -40,15 +44,47 @@ public class Step1Fragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         this.listener=(FragmentListener) context;
+        this.dataListener=(DataListener)context;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getView().findViewById(R.id.next_button).setOnClickListener(v -> listener.nextButtonCLicked("step2"));
+        nameEditText = getView().findViewById(R.id.name_edittext);
+        getView().findViewById(R.id.next_button).setOnClickListener(v -> {
+
+            userName=nameEditText.getText().toString();
+            if(userName==null||userName.length()==0)
+            {
+                listener.onError("please enter your name");
+                return;
+            }
+
+            dataListener.setName(userName);
+            listener.nextButtonCLicked("step2");
+
+
+        });
+
 
 
     }
+
+
+    public void closeProgressBar()
+    {
+
+
+
+    }
+    public void showProgressBar(String message)
+    {
+
+    }
+    public static interface DataListener{
+        void setName(String name);
+    }
+
 
 
 

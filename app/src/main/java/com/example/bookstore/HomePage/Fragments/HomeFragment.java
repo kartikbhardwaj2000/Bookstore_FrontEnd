@@ -11,16 +11,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bookstore.R;
+import com.example.bookstore.SessionManager;
 
 public class HomeFragment extends Fragment {
 
 
     private Spinner spinner;
     private SearchView searchView;
+    private SessionManager sessionManager;
+    private TextView greetTv;
+    private String userName ="";
+    private String cityName;
+
 
 
     @Override
@@ -40,8 +48,24 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        spinner=getView().findViewById(R.id.city_spinner);
+
+        sessionManager=new SessionManager(getActivity());
+        userName=sessionManager.getNAME();
+        cityName=sessionManager.getLOCATION();
+        spinner=getView().findViewById(R.id.current_city_spinner);
         searchView=getView().findViewById(R.id.search_view);
+        greetTv=getView().findViewById(R.id.greet_tv);
+        greetTv.setText("Hello "+userName+", You are currently viewing in ");
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.city_names, android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
+        if(cityName!=null)
+        {
+            int spinnerPosition = adapter.getPosition(cityName);
+            spinner.setSelection(spinnerPosition);
+
+        }
+
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -57,5 +81,10 @@ public class HomeFragment extends Fragment {
                 return true;
             }
         });
+    }
+
+    public void initialize()
+    {
+
     }
 }

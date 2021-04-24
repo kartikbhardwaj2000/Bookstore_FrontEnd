@@ -17,23 +17,24 @@
         android:orientation="vertical"
         >
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
 
 
             >
            <TextView
+               android:id="@+id/greet_tv"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="You are currently viewing in "
+               android:text="Hello aseem, You are currently viewing in "
                android:textColor="@color/black"
                />
             <Spinner
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/city_names"
-                android:id="@+id/select_city_spinner"
+                android:id="@+id/current_city_spinner"
 
                 />
         </LinearLayout>
@@ -53,20 +54,20 @@
                 android:layout_height="wrap_content"
                 android:background="#85BAF3"
                 app:searchIcon="@drawable/search_icon_white"
-                android:layout_marginLeft="@dimen/margin_16pts"
+                android:layout_marginHorizontal="@dimen/margin_16pts"
                 app:queryHint="Search your book here"
                 android:id="@+id/search_view"
 
 
                 />
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:src="@drawable/filter_icon"
-                android:layout_marginRight="@dimen/margin_16pts"
-                android:background="@color/white"
+<!--            <androidx.appcompat.widget.AppCompatImageButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/filter_icon"-->
+<!--                android:layout_marginRight="@dimen/margin_16pts"-->
+<!--                android:background="@color/white"-->
 
-                />
+<!--                />-->
 
         </LinearLayout>
 
