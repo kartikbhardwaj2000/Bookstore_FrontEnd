@@ -65,7 +65,6 @@ public class Step3Fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-
         super.onViewCreated(view, savedInstanceState);
        phoneNoTextView= getView().findViewById(R.id.phone_no_txt);
        phoneNoTextView.setText(phoneNumber);

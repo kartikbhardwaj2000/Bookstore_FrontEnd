@@ -2,8 +2,17 @@ package com.example.bookstore;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
-public class SessionManager {
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+public class SessionManager   {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Context context;
@@ -14,12 +23,28 @@ public class SessionManager {
     private String USER_ID="user_id";
     private String PROFILE_PIC_LINK="profile_pic_link";
     private String LOCATION ="location";
+    private String DEVICE_ID="device_id";
+
 
     public SessionManager(Context context)
     {
         this.context=context;
         sharedPreferences=this.context.getSharedPreferences(PREF_NAME,PRIVATE_MODE);
         editor=sharedPreferences.edit();
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+            @Override
+            public void onSuccess(InstanceIdResult instanceIdResult) {
+                String newToken = instanceIdResult.getToken();
+                Log.d("newToken",newToken);
+                setDEVICE_ID(newToken);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("token error",e.getMessage());
+            }
+        });
+
     }
 
 
@@ -66,6 +91,17 @@ public class SessionManager {
     public void setLOCATION(String location)
     {
         editor.putString(LOCATION,location);
+        editor.commit();
+    }
+
+    public String getDEVICE_ID()
+    {
+        return this.sharedPreferences.getString(DEVICE_ID,null);
+
+    }
+    public void setDEVICE_ID(String token)
+    {
+        editor.putString(DEVICE_ID,token);
         editor.commit();
     }
 }

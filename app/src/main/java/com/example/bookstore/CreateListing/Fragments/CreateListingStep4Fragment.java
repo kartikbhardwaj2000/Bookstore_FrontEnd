@@ -17,7 +17,7 @@ import com.example.bookstore.R;
 public class CreateListingStep4Fragment extends Fragment {
 
 
-    Spinner citySpinner;
+    private ImageCapture imageCapture;
     private Button nextButton;
     private Listener listener;
 
@@ -25,6 +25,7 @@ public class CreateListingStep4Fragment extends Fragment {
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         listener=(Listener)context;
+        imageCapture=(ImageCapture)context;
 
     }
 
@@ -45,14 +46,22 @@ public class CreateListingStep4Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        citySpinner = getView().findViewById(R.id.city_spinner);
         nextButton=getView().findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onNextClick("step5");
+
+
+                imageCapture.captureImage();
+//                listener.onNextClick("step5");
             }
         });
+
+    }
+
+    public static interface ImageCapture{
+        void captureImage();
+
 
     }
 

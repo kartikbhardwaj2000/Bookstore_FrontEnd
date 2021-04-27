@@ -217,7 +217,7 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
             jsonbody.put("phoneNumber",phoneNumber);
             jsonbody.put("name",userName);
             JSONObject locationObj = new JSONObject();
-            locationObj.put("city","hisar");
+            locationObj.put("city",userLocation);
             jsonbody.put("location",locationObj);
 
         }catch (JSONException e){
@@ -495,5 +495,103 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
         sessionManager.setPHONE_NO(phoneNumber);
         sessionManager.setUSER_ID(userID);
         sessionManager.setLOCATION(userLocation);
+        setToken();
+    }
+
+    public void setToken()
+    {
+       SessionManager sessionManager=new SessionManager(this);
+        String userId=sessionManager.getUSER_ID();
+        String token =sessionManager.getDEVICE_ID();
+        if(userId==null)
+        {
+            return;
+        }
+
+
+
+        if(requestQueue==null)
+        {
+            requestQueue= VolleySingleton.getInstance(this.getApplicationContext()).getRequestQueue();
+
+
+
+        }
+        JSONObject jsonbody= new JSONObject();
+        try {
+            jsonbody.put("userId",userId);
+            jsonbody.put("deviceId",token);
+
+
+        }catch (JSONException e){
+            Log.d("error",e.toString());
+        }
+        String requestBody =jsonbody.toString();
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URL+"user/setToken", null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                Log.d("response", response.toString());
+                String status = null;
+                try {
+                    status = response.getString("status");
+                    Log.d("setToken","Token set successfully");
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                if (!status.equals("success")) {
+                    Log.d("setToken", "could not set token");
+                }
+
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("setToken", "could not set token");
+
+            }
+        }
+        ){
+
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+
+            @Override
+            public byte[] getBody()  {
+                try {
+                    return requestBody == null ? null : requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
+                    return null;
+                }
+            }
+
+
+        };
+        jsonObjectRequest.setRetryPolicy(new RetryPolicy() {
+            @Override
+            public int getCurrentTimeout() {
+                return 5000;
+            }
+
+            @Override
+            public int getCurrentRetryCount() {
+                return 2;
+            }
+
+            @Override
+            public void retry(VolleyError error) throws VolleyError {
+
+            }
+        });
+
+        requestQueue.add(jsonObjectRequest);
     }
 }

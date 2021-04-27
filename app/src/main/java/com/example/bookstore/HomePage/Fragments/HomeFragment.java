@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 import com.example.bookstore.R;
 import com.example.bookstore.SessionManager;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
 
     private Spinner spinner;
@@ -28,6 +29,7 @@ public class HomeFragment extends Fragment {
     private TextView greetTv;
     private String userName ="";
     private String cityName;
+    private ArrayAdapter<CharSequence> adapter;
 
 
 
@@ -56,8 +58,9 @@ public class HomeFragment extends Fragment {
         searchView=getView().findViewById(R.id.search_view);
         greetTv=getView().findViewById(R.id.greet_tv);
         greetTv.setText("Hello "+userName+", You are currently viewing in ");
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),R.array.city_names, android.R.layout.simple_spinner_item);
+        adapter = ArrayAdapter.createFromResource(getActivity(),R.array.city_names, android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
         if(cityName!=null)
         {
             int spinnerPosition = adapter.getPosition(cityName);
@@ -85,6 +88,17 @@ public class HomeFragment extends Fragment {
 
     public void initialize()
     {
+
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(getActivity(),adapter.getItem(position).toString(),Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

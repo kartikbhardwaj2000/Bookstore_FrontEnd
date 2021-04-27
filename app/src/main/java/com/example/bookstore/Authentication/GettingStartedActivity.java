@@ -19,27 +19,27 @@ public class GettingStartedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getting_started);
 
-        if(!isNewSession())
-        {
-
-            startHomeActivity();
-        }
+//        if(!isNewSession())
+//        {
+//
+//            startHomeActivity();
+//        }
 
     }
 
-    public void startHomeActivity()
-    {
-        Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public boolean isNewSession()
-    {
-        sessionManager=new SessionManager(this);
-
-        return sessionManager.getUSER_ID()==null;
-    }
+//    public void startHomeActivity()
+//    {
+//        Intent intent = new Intent(this, HomeActivity.class);
+//        startActivity(intent);
+//        finish();
+//    }
+//
+//    public boolean isNewSession()
+//    {
+//        sessionManager=new SessionManager(this);
+//
+//        return sessionManager.getUSER_ID()==null;
+//    }
 
     public void startSignUp(View view){
 
