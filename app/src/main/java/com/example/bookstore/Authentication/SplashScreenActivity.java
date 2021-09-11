@@ -5,14 +5,17 @@ import com.example.bookstore.SessionManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private SessionManager sessionManager;
-
+   private String CHANNEL_ID="#113";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +41,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     public void startHomeActivity()
     {
+        createNotificationChannel();
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
         finish();
@@ -58,4 +62,16 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
 
+    public void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.O)
+        {
+            String name = "important channel";
+            String description= "this channel is for receiving notifications ";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel= new NotificationChannel(CHANNEL_ID,name,importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 }

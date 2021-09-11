@@ -55,6 +55,7 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
     private final String  URL="https://bookstore-rc.herokuapp.com/";
     private String userID;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,14 +67,35 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
 
 
    ActionBar actionBar= getSupportActionBar();
-   if(actionBar!=null)
+   if(userName==null)
+   {
+       Log.d("state","null");
+
+   }else {
+       Log.d("state",userName);
+
+   }
+
+        if(actionBar!=null)
    {
        actionBar.setDisplayHomeAsUpEnabled(true);
    }
-        addFirstFragment();
+
+   if(savedInstanceState==null||!savedInstanceState.getBoolean("isRecreated"))
+   {
+       addFirstFragment();
+
+   }
 
 
 
+    }
+
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("isRecreated",true);
     }
 
     @Override
@@ -209,7 +231,6 @@ public class SignupActivity extends AppCompatActivity  implements FragmentListen
         if(requestQueue==null)
         {
             requestQueue= VolleySingleton.getInstance(this.getApplicationContext()).getRequestQueue();
-
 
         }
         JSONObject jsonbody= new JSONObject();

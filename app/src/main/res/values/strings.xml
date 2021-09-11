@@ -24,6 +24,21 @@
         <item>Calcutta</item>
         <item>Noida</item>
     </string-array>
+    <string-array name="subject_names">
+        <item>Electrical and Electronics</item>
+        <item>Electronic and Communications</item>
+        <item>Electronic and Instrumentations</item>
+        <item>Mechanical Engineering</item>
+        <item>Chemical Engineering</item>
+        <item>Computer Science Engineering</item>
+    </string-array>
+    <string-array name="class_names">
+        <item>1st year</item>
+        <item>2nd year</item>
+        <item>3rd year</item>
+        <item>4th year</item>
+
+    </string-array>
 
     <!--    Create Listing-->
     <string name="enterBookName"> Enter Book Name</string>
@@ -36,5 +51,5 @@
 
 
     <!--    Home Page-->
-    <string name="notify"> Notify </string>
+    <string name="notify"> Notify seller </string>
 </resources>

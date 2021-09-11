@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    >
+
+
+    <View
+        android:id="@+id/im_bgrnd"
+        android:layout_width="155dp"
+
+        android:layout_height="210dp"
+        android:background="#E2F1EF"
+        app:layout_constraintEnd_toStartOf="@+id/booktitle_tv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/booktitle_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:width="0dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:minLines="1"
+        android:text='Acer Aspire 5 A515-55-35SE, 15.6" Full HD Display, 10th Gen Intel Core i3-1005G1 Processor, 4GB DDR4, 128GB NVMe SSD, Intel WiFi 6 AX201, Backlit KB, Fingerprint Reader, Windows 10 Home (S Mode)'
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/im_bgrnd"
+        app:layout_constraintTop_toTopOf="@+id/im_bgrnd" />
+
+    <ImageView
+        android:id="@+id/book_imageview"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="@+id/im_bgrnd"
+        app:layout_constraintEnd_toEndOf="@+id/im_bgrnd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/im_bgrnd"
+        app:srcCompat="@drawable/book_placeholder" />
+
+    <ToggleButton
+        android:id="@+id/fav__btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/favourite_off_24"
+        android:text="ToggleButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/notify_owner_btn"
+        app:layout_constraintTop_toTopOf="@+id/booktitle_tv" />
+
+    <TextView
+        android:id="@+id/bookauthor_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="By-Nipun and samesh"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/bookprice_tv"
+        app:layout_constraintStart_toStartOf="@+id/booktitle_tv"
+        app:layout_constraintTop_toBottomOf="@+id/booktitle_tv"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/bookcondition_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Like New"
+        app:layout_constraintBottom_toTopOf="@+id/edition_tv"
+        app:layout_constraintStart_toStartOf="@+id/bookprice_tv"
+        app:layout_constraintTop_toBottomOf="@+id/bookprice_tv" />
+
+    <TextView
+        android:id="@+id/bookprice_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs 450/-"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/bookcondition_tv"
+        app:layout_constraintStart_toStartOf="@+id/bookauthor_tv"
+        app:layout_constraintTop_toBottomOf="@+id/bookauthor_tv" />
+
+    <Button
+        android:id="@+id/notify_owner_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#D5D5F6"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text="@string/notify"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/level_tv"
+        app:layout_constraintTop_toBottomOf="@+id/level_tv" />
+
+    <TextView
+        android:id="@+id/edition_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1st edition"
+        app:layout_constraintBottom_toTopOf="@+id/level_tv"
+        app:layout_constraintStart_toStartOf="@+id/bookcondition_tv"
+        app:layout_constraintTop_toBottomOf="@+id/bookcondition_tv" />
+
+    <TextView
+        android:id="@+id/level_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="beginner level"
+        app:layout_constraintBottom_toTopOf="@+id/notify_owner_btn"
+        app:layout_constraintStart_toStartOf="@+id/edition_tv"
+        app:layout_constraintTop_toBottomOf="@+id/edition_tv" />
+</androidx.constraintlayout.widget.ConstraintLayout>

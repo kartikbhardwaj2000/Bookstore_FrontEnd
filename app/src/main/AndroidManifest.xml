@@ -3,9 +3,10 @@
     package="com.example.bookstore">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera2"
-        android:required="false"
-        />
+
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +15,15 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/appTheme">
+        <service
+            android:name=".HomePage.MyFirebaseService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
         <activity android:name=".Authentication.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,17 +41,29 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".HomePage.HomeActivity" />
-        <activity android:name=".HomePage.BookDetailActivity" />
+        <activity android:name=".HomePage.BookDetailActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:host="www.bookstore-rc.herokuapp.com"
+                    android:pathPrefix="/store/getBookDetail"
+                    android:scheme="https" />
+                <data android:scheme="http" android:host="www.bookstore-rc.herokuapp.com"
+                    android:pathPrefix="/store/getBookDetail"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+
+        </activity>
         <activity android:name=".CreateListing.CreateListingActivity" />
         <activity
             android:name=".Authentication.SignupActivity"
             android:theme="@style/gettingStartedTheme" />
         <activity
             android:name=".Authentication.GettingStartedActivity"
-            android:theme="@style/gettingStartedTheme">
-
-        </activity>
+            android:theme="@style/gettingStartedTheme"></activity>
         <activity android:name=".MainActivity" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.android.fileprovider"
@@ -49,9 +71,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

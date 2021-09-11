@@ -10,19 +10,35 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+
+import com.example.bookstore.Authentication.Fragments.Step4Fragment;
 import com.example.bookstore.CreateListing.CreateListingActivity;
 import com.example.bookstore.HomePage.Fragments.FavouriteFragment;
 import com.example.bookstore.HomePage.Fragments.HomeFragment;
+import com.example.bookstore.HomePage.Fragments.Listener;
 import com.example.bookstore.HomePage.Fragments.NotificationFragment;
 import com.example.bookstore.HomePage.Fragments.ProfileFragment;
+import com.example.bookstore.HomePage.RecyclerView.BookItemModel;
 import com.example.bookstore.R;
+import com.example.bookstore.VolleySingleton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, Listener {
     private BottomNavigationView bottomNavigationView;
+    private String URL="https://bookstore-rc.herokuapp.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,5 +119,17 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         Intent intent = new Intent(this, CreateListingActivity.class);
         startActivity(intent);
     }
+
+
+    @Override
+
+
+    public void onError(String message)
+    {
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    }
+
+
+
 
 }

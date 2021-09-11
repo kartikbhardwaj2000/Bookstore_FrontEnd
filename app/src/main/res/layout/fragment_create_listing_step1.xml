@@ -9,26 +9,33 @@
     android:layout_margin="@dimen/margin_16pts"
     >
 
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
         android:text="@string/enterBookName"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_large" />
+        android:textSize="@dimen/text_large"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_16pts"
         android:gravity="left"
+        android:layout_marginBottom="@dimen/margin_large"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_large"
+        android:textSize="24sp"
+        android:background="@android:color/transparent"
+        android:hint="Ex. Concepts of Physics"
         />
 
     <TextView
+        android:layout_marginTop="@dimen/margin_large"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
@@ -39,12 +46,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_16pts"
         android:gravity="left"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_large"
+        android:textSize="24sp"
+        android:background="@android:color/transparent"
+        android:hint="Ex. Hc verma"
         />
 
 
@@ -55,9 +63,10 @@
         android:text="@string/next"
         android:layout_marginHorizontal="@dimen/margin_16pts"
         android:layout_marginTop="@dimen/margin_large"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="bottom"
         android:textColor="@color/white"
         android:enabled="true"
+
 
 
         />

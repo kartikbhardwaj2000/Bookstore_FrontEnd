@@ -25,7 +25,7 @@
         android:layout_margin="@dimen/margin_16pts"
         android:id = "@+id/spinnerSubject"
         android:background="@drawable/spinner_border"
-        android:entries="@array/city_names"
+        android:entries="@array/subject_names"
         />
 
 
@@ -36,7 +36,8 @@
         android:textSize="@dimen/text_large"
         android:gravity="left"
         android:textColor="@color/black"
-        android:layout_margin="@dimen/margin_16pts"/>
+        android:layout_margin="@dimen/margin_16pts"
+        />
 
 
 
@@ -47,6 +48,7 @@
         android:layout_margin="@dimen/margin_16pts"
         android:id = "@+id/spinnerClass"
         android:background="@drawable/spinner_border"
+        android:entries="@array/class_names"
         />
 
     <Button

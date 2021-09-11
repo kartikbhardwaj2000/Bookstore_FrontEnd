@@ -24,9 +24,11 @@
         android:layout_margin="@dimen/margin_16pts"
         android:gravity="left"
         android:imeOptions="actionDone"
-        android:inputType="text"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_large"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        android:hint="100"
+        android:background="@android:color/transparent"
+
         />
 
     <TextView
@@ -42,14 +44,17 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="@dimen/margin_16pts"
         android:layout_marginTop="@dimen/margin_16pts"
         android:gravity="left"
         android:imeOptions="actionDone"
-        android:inputType="text"
+        android:hint="Write a short description"
+        android:textSize="24sp"
+        android:inputType="textMultiLine"
+        android:background="@android:color/transparent"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_large"
+        android:layout_weight="1"
         />
 
     <Button

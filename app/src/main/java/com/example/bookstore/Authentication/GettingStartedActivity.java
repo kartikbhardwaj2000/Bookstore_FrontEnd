@@ -4,8 +4,12 @@ import com.example.bookstore.HomePage.HomeActivity;
 import com.example.bookstore.R;
 import com.example.bookstore.SessionManager;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -47,6 +51,7 @@ public class GettingStartedActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 
 
 

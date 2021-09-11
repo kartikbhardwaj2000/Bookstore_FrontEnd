@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.bookstore.R;
 
@@ -20,6 +21,7 @@ public class CreateListingStep4Fragment extends Fragment {
     private ImageCapture imageCapture;
     private Button nextButton;
     private Listener listener;
+    private TextView skipTv;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -46,6 +48,13 @@ public class CreateListingStep4Fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        skipTv=getView().findViewById(R.id.skip_tv);
+        skipTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onNextClick("step5");
+            }
+        });
         nextButton=getView().findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override

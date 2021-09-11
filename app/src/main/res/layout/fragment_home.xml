@@ -6,8 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".HomePage.Fragments.HomeFragment"
     >
+    <include layout="@layout/progress_bar"/>
 
-  <androidx.core.widget.NestedScrollView
+
+    <androidx.core.widget.NestedScrollView
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       >
@@ -60,16 +62,24 @@
 
 
                 />
-<!--            <androidx.appcompat.widget.AppCompatImageButton-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:src="@drawable/filter_icon"-->
-<!--                android:layout_marginRight="@dimen/margin_16pts"-->
-<!--                android:background="@color/white"-->
 
-<!--                />-->
+
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
+            android:orientation="vertical"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/books_rv"
+                />
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

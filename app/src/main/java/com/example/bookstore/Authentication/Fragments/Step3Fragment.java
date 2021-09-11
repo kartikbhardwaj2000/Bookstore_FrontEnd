@@ -28,10 +28,11 @@ public class Step3Fragment extends Fragment {
     private String phoneNumber;
     private TextView phoneNoTextView;
     private TextView resendTextView;
-    private TextView progressTV;
     private EditText otpEdtxt;
     private View content;
     private View progressLayout;
+    private TextView progressTV;
+
 
 
     @Override
@@ -71,8 +72,9 @@ public class Step3Fragment extends Fragment {
        resendTextView=getView().findViewById(R.id.resend_tv);
        progressLayout=getView().findViewById(R.id.progress_layout);
        content=getView().findViewById(R.id.content);
-       otpEdtxt=getView().findViewById(R.id.otp_edt);
        progressTV=getView().findViewById(R.id.message_tv);
+
+        otpEdtxt=getView().findViewById(R.id.otp_edt);
 
 
 
